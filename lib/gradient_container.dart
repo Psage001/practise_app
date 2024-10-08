@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
-class GradientConatainer extends StatelessWidget{
- const GradientConatainer({super.key});
+import 'package:practise_app/center_text.dart';
+
+class GradientContainer extends StatelessWidget {
+  const GradientContainer(this.color1, this.color2,{super.key});
+    final Color color1;
+    final Color color2;
   @override
   Widget build(BuildContext context) {
     return Container(
-          decoration: const BoxDecoration(
-              gradient:
-                  LinearGradient(colors: [Color.fromARGB(221, 147, 6, 6),
-                   Color.fromARGB(255, 226, 10, 10)],
-                   begin: Alignment.topLeft,
-                   end: Alignment.bottomRight,
-                   )),
-          child: const Center(
-            child: Text('timmy', style: TextStyle(fontSize: 20.0, color: Colors.amberAccent, fontWeight: FontWeight.bold  ), ),
-          ),
+        decoration:  BoxDecoration(
+            gradient: LinearGradient(
+          colors: [
+            color1,color2
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        )),
+        child: const Center(
+          child: CenterText("Hello"),
+        ),
         );
   }
 }
